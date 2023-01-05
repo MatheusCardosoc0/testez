@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  db-postgres-events:
+    image: postgres:alpine
+    ports:
+      - "5435:5432"
+    container_name: "db-postgres-evento"
+    restart: always
+    volumes:
+      - ./banco-de-dados-evento:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: matheus
+      POSTGRES_PASSWORD: postgreasy
+
+
+volumes:
+  banco-de-dados-evento:
